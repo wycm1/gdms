@@ -109,6 +109,22 @@ public class ChoiseController extends BaseController {
 		}
 		
 	}
+	@RequestMapping("/distributeView")
+	public String distributeStudentView()
+	{
+		/**
+		 * 分配学生的视图，包含学生列表和老师列表
+		 */
+		return null;
+	}
+	@RequestMapping("/distribute")
+	public String distributeStudent()
+	{
+		/**
+		 * 分配学生
+		 */
+		return null;
+	}
 	@RequestMapping("/xlsexport")
 	public String xlsExport(){
 		return null;
