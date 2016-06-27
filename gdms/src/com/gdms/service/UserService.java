@@ -59,4 +59,7 @@ public class UserService {
 	public List<User> getStudentByTeacher(User teacher){
 		return userDAO.selectChoiseMeStudent(teacher.getId());
 	}
+	public void updateUserById(User user){
+		this.userDAO.updateByPrimaryKeySelective(user);
+	}
 }

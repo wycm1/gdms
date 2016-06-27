@@ -25,6 +25,7 @@ public class ChoiseController extends BaseController {
 	private StuTutorService stuTutorService;
 	@Resource
 	private TutorStuService tutorStuService;
+	
 	public StuTutorService getStuTutorService() {
 		return stuTutorService;
 	}
@@ -110,19 +111,25 @@ public class ChoiseController extends BaseController {
 		
 	}
 	@RequestMapping("/distributeView")
-	public String distributeStudentView()
+	public String distributeStudentView(HttpSession session, Model model)
 	{
 		/**
 		 * 分配学生的视图，包含学生列表和老师列表
 		 */
+		User user =  (User) session.getAttribute("user");
+		List<User> studentList = tutorStuService.getLastStudentByMajor(user.getMajor());
+		List<User> teacherList = userService.getTeacherByMajor(user.getMajor());
+		model.addAttribute("studentList", studentList);
+		model.addAttribute("teacherList", teacherList);
 		return null;
 	}
 	@RequestMapping("/distribute")
-	public String distributeStudent()
+	public String distributeStudent(int[] studentId, int teacherId)
 	{
 		/**
 		 * 分配学生
 		 */
+		tutorStuService.distributeStudent(studentId, teacherId);
 		return null;
 	}
 	@RequestMapping("/xlsexport")

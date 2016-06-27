@@ -50,7 +50,9 @@ public class NoticeController {
 			List<Notice> teacherNoticeList = noticeService.getNoticeListByTeacherId(teacher_id);
 			List<Notice> majorNoticeList = noticeService.getMajorNoticeList(user.getMajor());
 			List<Notice> collegeNoticeList = noticeService.getCollegeNoticeList();
-			model.addAttribute("teacherNoticeList", teacherNoticeList);
+			if(user.haveTeacherPermission()||user.isStudent()){
+				model.addAttribute("teacherNoticeList", teacherNoticeList);
+			}
 			model.addAttribute("majorNoticeList", majorNoticeList);
 			model.addAttribute("collegeNoticeList", collegeNoticeList);
 			return "noticeList";

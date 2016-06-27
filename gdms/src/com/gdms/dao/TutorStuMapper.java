@@ -3,7 +3,6 @@ package com.gdms.dao;
 import java.util.List;
 
 import com.gdms.pojo.TutorStu;
-import com.gdms.pojo.User;
 
 public interface TutorStuMapper {
     int deleteByPrimaryKey(Integer id);
@@ -13,6 +12,8 @@ public interface TutorStuMapper {
     int insertSelective(TutorStu record);
 
     TutorStu selectByPrimaryKey(Integer id);
+    
+    TutorStu getTeacherByStudentId(Integer studentId);
     
     int selectChoiseCount(Integer teacher_id);
 

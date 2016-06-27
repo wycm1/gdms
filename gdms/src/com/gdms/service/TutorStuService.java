@@ -1,5 +1,7 @@
 package com.gdms.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -48,4 +50,17 @@ public class TutorStuService {
 			return true;
 		}
 	}
+	public List<User> getLastStudentByMajor(String major){
+		/**
+		 * 获取没有导师选择的学生，剩下的学生
+		 */
+		return userDAO.getLastStudentByMajor(major);
+	}
+	public void distributeStudent(int[] studentId, int teacherId)
+	{
+		for(int i=0; i<studentId.length; i++){
+			create(studentId[i], teacherId);
+		}
+	}
+
 }
