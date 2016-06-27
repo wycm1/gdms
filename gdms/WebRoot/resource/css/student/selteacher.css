@@ -1,0 +1,114 @@
+/*header*/
+.header-top{
+	width: 100%;
+	height: 30px;
+	background: #D7D7D7;
+}
+.nav-left li{
+	display: block;
+	float: left;
+	color: #3F3F3F;
+    padding: 5px 12px;
+}
+.nav-right li{
+	display: block;
+	float: left;
+	color: #3F3F3F;
+    padding: 5px 12px;
+}
+.nav-right li:last-child{
+    padding: 5px 0px 5px 12px;;
+}
+.header-wrap{
+	width: 100%;
+	height: 110px;
+	background: #F8F8F8;
+}
+.logo{
+	width: 500px;
+}
+.wrap-tit{
+	height: 110px;
+}
+.wrap-tit h1{
+	color: #08C;
+	line-height: 70px;
+}
+.wrap-tit .user{
+	margin-top: 10px;
+	width: 470px;
+	height: 88px;
+	border: 1px solid #E1E1E1;
+}
+
+.wrap-tit .user .user-face{
+	padding: 10px;
+}
+.wrap-tit .user .user-info{
+	padding: 9px;
+}
+.wrap-tit .user .devide{
+	padding: 10px;
+}
+
+
+
+
+.field{
+	margin:35px 5px 0 15px;
+	min-width: 500px;
+	min-height: 450px;
+	
+	border:1px solid #B2B2B2;
+}
+
+.field .legend{
+	position:absolute;
+	font-size: 26px;
+	top:15px;
+	left:50px;
+	color:#2E8DED;
+	background: #FFFFFF;
+}
+#selteacher{
+	margin: 30px 3px 0 3px;
+	
+}
+.leftbar{
+	border: 1px solid #E1E1E1;
+	text-align: center;
+	min-height: 500px;
+}
+
+.rightbar{
+	border: 1px solid #E1E1E1;
+	min-height: 500px;
+}
+
+
+
+/*footer*/
+.footer-top{
+	width: 100%;
+	height: 45px;
+	background: #D7D7D7;
+}
+.footer-top-nav{
+	padding-top: 15px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+.footer-top-nav ul li{
+	padding: 0px 10px 0px 15px;
+	display: inline-block;
+}
+.footer-top-nav ul .pipe{
+    color: #909090;
+}
+.footer-wrap{
+	width: 100%;
+}
+.copyright{
+	text-align: center;
+}

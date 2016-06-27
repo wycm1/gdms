@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+/*1.1 布局*/
+.Hui-wraper {
+  padding: 0 20px;
+}
+
+
+/* notice.html  */
+.date-r {
+	position: absolute;
+	right: 30px;
+}
