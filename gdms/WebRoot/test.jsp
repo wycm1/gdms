@@ -6,7 +6,7 @@
 <html>
   <head>
     
-    <title>My JSP 'test.jsp' starting page</title>
+    <title>My JSP 'test.jsp' starting page1</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
