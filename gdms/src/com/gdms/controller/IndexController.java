@@ -16,6 +16,8 @@ public class IndexController{
 	private UserService userService;
 	@RequestMapping("")
 	public String getUser(Model model){
+		int i;
 		return "redirect:/login";
+		
 	}
 }
