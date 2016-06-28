@@ -45,25 +45,24 @@ public class UserController {
 		}
 		return null;
 	}
-	
+
 	@RequestMapping("/login")
-	public String login(String work_id, String password, Model model, HttpSession session, HttpServletRequest request){
+	public String login(String work_id, String password, Model model,
+			HttpSession session, HttpServletRequest request) {
 		String method = request.getMethod();
 		if ("GET".equals(method)) {
 			return "login";
-		}
-		else{
-			if(userService.login(session, work_id, password)){
-				//System.out.println("user：");
+		} else {
+			if (userService.login(session, work_id, password)) {
+				// System.out.println("user：");
 				return "succ";
-			}
-			else{
-				//System.out.println("login false");
+			} else {
+				// System.out.println("login false");
 				return "login";
 			}
 		}
 	}
-	
+
 	@RequestMapping("/student_register")
 	public String studentRegister(User user, String validateCode,
 			HttpServletRequest request, Model model) {
@@ -83,10 +82,9 @@ public class UserController {
 			} else {
 				if (userService.register(user, validateCode)) {
 					model.addAttribute("user", user);
-//					return "register";
+					// return "register";
 					return "redirect:/login";
-				}
-				else{
+				} else {
 					model.addAttribute("msg", "学号或密码错误");
 					return "register";
 				}
@@ -100,27 +98,33 @@ public class UserController {
 		String method = request.getMethod();
 		if ("GET".equals(method)) {
 			return "register";
-		} 
-		else {
+		} else {
 			if (user == null) {
 				model.addAttribute("msg", "user为空");
 				return "register";
-			} else if (user.getIntroduction() == null || user.getMajor() == null
-					|| user.getPassword() == null || user.getName() == null
-					|| user.getAmount() == null || user.getJobtitle() == null) {
+			} else if (user.getIntroduction() == null
+					|| user.getMajor() == null || user.getPassword() == null
+					|| user.getName() == null || user.getAmount() == null
+					|| user.getJobtitle() == null) {
 				model.addAttribute("msg", "数据不能为空");
 				return "register";
 			} else {
 				if (userService.register(user, validateCode)) {
 					model.addAttribute("user", user);
-//					return "register";
+					// return "register";
 					return "redirect:/login";
-				}
-				else{
+				} else {
 					model.addAttribute("msg", "学号或密码错误");
 					return "register";
 				}
 			}
 		}
+	}
+
+	@RequestMapping("/myinfo")
+	public String getMyinfo(HttpSession session, Model model) {
+		User user = (User) session.getAttribute("user");
+		model.addAttribute("user", user);
+		return null;
 	}
 }

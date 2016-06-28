@@ -62,5 +62,12 @@ public class TutorStuService {
 			create(studentId[i], teacherId);
 		}
 	}
-
+	public User getTeacherByStudent(int studentId){
+		/**
+		 * 获取老师，根据学生id
+		 */
+		TutorStu tutorStu = tutorStuDAO.getTeacherByStudentId(studentId);
+		tutorStu.setInstance();
+		return tutorStu.getTeacher();
+	}
 }

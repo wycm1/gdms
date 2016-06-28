@@ -41,12 +41,12 @@ public class DegreeService {
 		 */
 		degreeDAO.insertSelective(degree);
 	}
-	public void commentDegree(Comment comment, int degreeId, User teacher){
+	public void commentDegree(Comment comment, User teacher){
 		/**
 		 * ÆÀÂÛ½×¶ÎÉè¼Æ
 		 */
 		comment.setDateline(new Date());
-		comment.setDegreeId(degreeId);
+		//comment.setDegreeId(degreeId);
 		comment.setTeacherId(teacher.getId());
 		commentDAO.insertSelective(comment);
 	}
